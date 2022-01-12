@@ -55,16 +55,17 @@ class _MyHomePageState extends State<MyHomePage> {
             case ConnectionState.none:
             case ConnectionState.active:
             case ConnectionState.waiting:
-              return Center(child: Text('Loading..'));
+              return const Center(child: Text('Loading..'));
             case ConnectionState.done:
               List<Station> stations = snapshot.data ?? <Station>[];
               return ListView.builder(
                   itemCount: stations.length,
                   itemBuilder: (context, index) {
                     return Card(
+                      //margin: EdgeInsets,
                       child: ListTile(
                         title: Text('${stations[index].name}'),
-                        leading: CircleAvatar(
+                        leading: const CircleAvatar(
                           backgroundImage: AssetImage('assets/play.png'),
                         ),
                       ),
